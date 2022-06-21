@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <title>ONLIB - Login</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.css">
+        <script src="js/bootstrap.js"></script>
+        <script src="js/functions.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"><strong>ONLIB</strong></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            ON
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">SEILA</a></li>
+                            <li><a class="dropdown-item" href="#">NSEI</a></li>
+                            <li><a class="dropdown-item" href="#">ALGUMACOISA</a></li>
+                            <li><a class="dropdown-item" href="#">LALA</a></li>
+                            <li><a class="dropdown-item" href="#">LALA</a></li>
+                            <li><a class="dropdown-item" href="#">LALA</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+        </nav> <br> 
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-8">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Entrar
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <h2 class="text-center">Entrar</h2>
+                                    <form action="pages/home.html" id="formEntrar">
+                                        <div class="mb-3" id="mbemail">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="text" class="form-control" id="email" placeholder="Insira seu email">
+                                            <div class="invalid-feedback"> Email incorreto :c </div>
+                                            <div class="valid-feedback"> Email correto :p </div>
+                                        </div>
+                                        <div class="mb-3" id="mbsenha">
+                                            <label for="senha" class="form-label">Senha</label>
+                                            <input type="password" class="form-control" id="senha" placeholder="Insira sua senha">
+                                            <div class="invalid-feedback"> Senha incorreta :c </div>
+                                            <a href="">
+                                                <small> Esqueci minha senha </small>
+                                            </a>
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-primary">Entrar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Não possui cadastro? Clique aqui!
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer"></div>
+    </body>
+    <script>
+        include("includes/footer.html", "footer");
+
+        document.getElementById("formEntrar").addEventListener("submit", (e) => {
+            
+            let mbemail = document.getElementById("mbemail");
+            let email = document.getElementById("email");
+
+            let mbsenha = document.getElementById("mbsenha");
+            let senha = document.getElementById("senha");
+
+            let erro = false;
+
+            mbsenha.classList.remove("was-invalid");
+            senha.classList.remove("is-invalid");
+            if(email.value !== "123"){
+                mbemail.classList.remove("was-valid");
+                email.classList.remove("is-valid");
+                
+                mbemail.classList.add("was-invalid");
+                email.classList.add("is-invalid");
+                erro = true;
+            }else{
+                mbemail.classList.remove("was-invalid");
+                email.classList.remove("is-invalid");
+                
+                email.classList.add("is-valid");
+                mbemail.classList.add("was-valid");
+            }
+
+            if(!erro && senha.value !== "123"){
+                mbsenha.classList.remove("was-valid");
+                senha.classList.remove("is-valid");
+                
+                mbsenha.classList.add("was-invalid");
+                senha.classList.add("is-invalid");
+                erro = true;
+            }
+
+            if(erro){
+                e.preventDefault();
+            }
+            
+        });
+    </script>
+</html>
