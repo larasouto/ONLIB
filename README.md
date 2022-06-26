@@ -1,6 +1,6 @@
 # ONLIB
 
-### ONLIB é uma aplicação dinâmica de uma Bibliote Online desenvolvidada para disciplina de Programação Web.
+### ONLIB é uma aplicação dinâmica de uma Biblioteca Online desenvolvidada para disciplina de Programação Web.
 
 ### Homepage da aplicação:
 
