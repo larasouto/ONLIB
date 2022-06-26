@@ -10,7 +10,7 @@
         <script src="../js/bootstrap.js"></script>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="home.html"><strong>ONLIB</strong></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,17 +18,29 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <!-- 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Perfil do Leitor
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                
-                            </ul>
-                        </li>
-                    -->
                     </ul>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="bi-envelope-fill"></span>
+                            Mensagens
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item alert-primary" href="#" data-bs-toggle="modal" data-bs-target="#msgLorena">
+                                    <small><strong>Juju</strong> </small> <br>
+                                    <small>Bye!</small>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <small>Isacc </small> <br>
+                                    <small>Obrigado!</small>
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-primary" href="manutencao.html"><small>Ver todas mensagens</small></a></li>
+                        </ul>
+                    </div>
                     <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Clancy D. Gilroy
@@ -41,7 +53,68 @@
                     </div>
                 </div>
             </div>
-        </nav>
+        </nav> <br>
+        <div aria-live="polite" aria-atomic="true" class="position-relative">
+            <div class="toast-container position-fixed end-0 p-3" id="areaToast" style="z-index: 9999; margin-top: 20px;"></div>
+        </div>
+        <!-- Modal chat -->
+<div class="modal fade" id="msgLorena" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-success" id="titleChat" onclick="changeStatus();" data-bs-toggle="tooltip" data-bs-placement="right" title="Conectado">
+                    <span class="bi-people"></span> &nbsp; </sup>
+                    Juju 
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="height: 10000px;" id="chat">
+                <div class="col-12 alert-light">
+                    <small><strong>Você</strong> </small> <br>
+                    <small>Oi Juju!</small>
+                </div>
+                <div class="col-12 alert-light">
+                    <small><strong>Você</strong> </small> <br>
+                    <small>How was the concert?</small> <br>
+                    <small>You went with your friends?</small>
+                </div>
+                <div class="col-12 alert-light">
+                    <small><strong>Juju</strong> </small> <br>
+                    <small>It was awesome , yes i did!!</small>
+                </div>
+                <div class="col-12 alert-light">
+                    <small><strong>Você</strong> </small> <br>
+                    <small>How nice! Glad you enjoyed.</small>
+                </div>
+                <div class="col-12 alert-light">
+                    <small><strong>Juju</strong> </small> <br>
+                    <small>Thank you, bye!</small>
+                </div>
+                <div class="col-12">
+                    <small><strong>Você</strong> </small> <br>
+                    <small>Bye!</small>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="container">
+                    <form id="chatEnviaMsg" onsubmit="event.preventDefault(); enviarMsg();">
+                        <div class="row">
+                            <div class="col-9">
+                                <input class="form-control" placeholder="Aa" id="message" autocomplete="off">
+                            </div>
+                            <div class="col-3">
+                                <button type="submit" class="btn btn-outline-primary">
+                                    <span class="bi-reply"></span>
+                                    Enviar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><br><br><br>
         <div id="header"></div>
         <div class="container">
             <div class="row">
@@ -73,7 +146,7 @@
                                             <tr> 
                                                 <td>
                                                     <div class="text-center" style="width: 200px;">
-                                                        <img src="../images/over.jpg" class="rounded" alt="..." style="width: 100%;">
+                                                        <img src="../images/livro0.jpg" class="rounded" alt="..." style="width: 100%;">
                                                         <p> <span class="bi bi-book"></span> Over The Garden Wall <br> <small><a href=""> </p>
                                                     </div>
                                                     
@@ -99,7 +172,7 @@
                                             <tr> 
                                                 <td>
                                                 <div class="text-center" style="width: 200px;">
-                                                    <img src="../images/o-mundo-de-sofia.png" class="rounded" alt="..." style="width: 100%;">
+                                                    <img src="../images/livro1.png" class="rounded" alt="..." style="width: 100%;">
                                                     <p> <span class="bi bi-book"></span> O Mundo de Sofia <br> <small><a href=""> </p>
                                             </div>
                                         </td><td></td><td></td>                                               

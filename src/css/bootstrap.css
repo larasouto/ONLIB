@@ -208,11 +208,11 @@ sup {
 }
 
 a {
-  color: #c7c7c7;
+  color: #94B3FD;
   text-decoration: underline;
 }
 a:hover {
-  color: #94B3FD;
+  color: #8585F7;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -7176,11 +7176,11 @@ textarea.form-control-lg {
 }
 
 .text-primary {
-  color: #F3D5C0 !important;
+  color: #6f42c1 !important;
 }
 
 .text-secondary {
-  color: #D4B499 !important;
+  color: #6f42c1 !important;
 }
 
 .text-success {

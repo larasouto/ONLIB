@@ -43,10 +43,10 @@ function filtro(input){
     let tfiltro = document.getElementById('tfiltro');
     let livros = [
         "OVER THE GARDEN WALL",
-        "LAALAL",
+        "O MUNDO DE SOFIA",
         "SENHOR DOS ANEIS",
-        "DSKJSDKS",
-        "DFLDFÇ"
+        "A MENINA QUE ROUBAVA LIVROS",
+        "GRAVITY FALLS"
     ];
     tfiltro.innerHTML = "";
     if(input.value != ""){
