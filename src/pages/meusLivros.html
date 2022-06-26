@@ -3,14 +3,14 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8">
-        <title>ONLIB - Meus Turmas</title>
+        <title>ONLIB - Meus livros</title>
         <link rel="stylesheet" href="../css/bootstrap.css">
         <link rel="stylesheet" href="../bootstrap-icons/font/bootstrap-icons.css">
         <script src="../js/functions.js"></script>
         <script src="../js/bootstrap.js"></script>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="home.html"><strong>ONLIB</strong></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,29 +18,17 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <!-- 
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Perfil do Leitor
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                
+                            </ul>
+                        </li>
+                    -->
                     </ul>
-                    <div class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <span class="bi-envelope-fill"></span>
-                            Mensagens
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li>
-                                <a class="dropdown-item alert-primary" href="#" data-bs-toggle="modal" data-bs-target="#msgLorena">
-                                    <small><strong>Juju</strong> </small> <br>
-                                    <small>Bye!</small>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    <small>Isacc </small> <br>
-                                    <small>Obrigado!</small>
-                                </a>
-                            </li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item text-primary" href="manutencao.html"><small>Ver todas mensagens</small></a></li>
-                        </ul>
-                    </div>
                     <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Clancy D. Gilroy
@@ -54,67 +42,6 @@
                 </div>
             </div>
         </nav> <br>
-        <div aria-live="polite" aria-atomic="true" class="position-relative">
-            <div class="toast-container position-fixed end-0 p-3" id="areaToast" style="z-index: 9999; margin-top: 20px;"></div>
-        </div>
-        <!-- Modal chat -->
-<div class="modal fade" id="msgLorena" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title text-success" id="titleChat" onclick="changeStatus();" data-bs-toggle="tooltip" data-bs-placement="right" title="Conectado">
-                    <span class="bi-people"></span> &nbsp; </sup>
-                    Juju 
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body" style="height: 10000px;" id="chat">
-                <div class="col-12 alert-light">
-                    <small><strong>Você</strong> </small> <br>
-                    <small>Oi Juju!</small>
-                </div>
-                <div class="col-12 alert-light">
-                    <small><strong>Você</strong> </small> <br>
-                    <small>How was the concert?</small> <br>
-                    <small>You went with your friends?</small>
-                </div>
-                <div class="col-12 alert-light">
-                    <small><strong>Juju</strong> </small> <br>
-                    <small>It was awesome , yes i did!!</small>
-                </div>
-                <div class="col-12 alert-light">
-                    <small><strong>Você</strong> </small> <br>
-                    <small>How nice! Glad you enjoyed.</small>
-                </div>
-                <div class="col-12 alert-light">
-                    <small><strong>Juju</strong> </small> <br>
-                    <small>Thank you, bye!</small>
-                </div>
-                <div class="col-12">
-                    <small><strong>Você</strong> </small> <br>
-                    <small>Bye!</small>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <div class="container">
-                    <form id="chatEnviaMsg" onsubmit="event.preventDefault(); enviarMsg();">
-                        <div class="row">
-                            <div class="col-9">
-                                <input class="form-control" placeholder="Aa" id="message" autocomplete="off">
-                            </div>
-                            <div class="col-3">
-                                <button type="submit" class="btn btn-outline-primary">
-                                    <span class="bi-reply"></span>
-                                    Enviar
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div><br><br><br>
         <div id="header"></div>
         <div class="container">
             <div class="row">
@@ -206,7 +133,44 @@
                                 </div>
                             </div>
                         </div>
-                    </div> 
+                    </div>
+                    <nav class="bg-white" style="padding: 10px; margin-top: 30px;">
+                        <div class="container text-center">
+                            <small> ONLIB | Biblioteca Online - (55) 9797 9797 | Copyright © 2022 - 2022</small> <br>
+                            <small>
+                                <a href="manutencao.html"><span class="bi bi-book"></span> Ajuda e Documentação</a> | 
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#modalError"> <span class="bi bi-bug"></span> Reportar Erro</a></small> 
+                        </div>
+                    </nav>
+                    <!-- Modal erros  -->
+                    <div class="modal fade" id="modalError" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" data-bs-toggle="tooltip" data-bs-placement="right">
+                                        <span class="bi-bug"></span> Reportar Erro
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body" id="chat">
+                                    <form action="" method="post">
+                                        <div class="mb-3" id="formErroPag">
+                                            <label for="email" class="form-label">URL</label>
+                                            <input type="url" class="form-control" id="email" placeholder="Insira a url para o erro encontrado" required>
+                                        </div>
+                                        <div class="mb-3" id="formErroPag">
+                                            <label for="email" class="form-label">Descrição</label>
+                                            <textarea class="form-control" placeholder="Insira uma breve descrição do problema encontrado"></textarea>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-outline-success" data-bs-dismiss="modal" onclick="toast('Relatório Enviado. Agradecemos sua contribuição! :D')">Reportar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="footer"></div>
 
                 </div>
             </div>

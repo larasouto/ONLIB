@@ -14,28 +14,36 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container-fluid">
-                <a class="navbar-brand" href=home.html><strong>ONLIB</strong></a>
+                <a class="navbar-brand" href="home.html"><strong>ONLIB</strong></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            ON
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <!-- 
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Perfil do Leitor
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                
+                            </ul>
+                        </li>
+                    -->
+                    </ul>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Clancy D. Gilroy
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">SEILA</a></li>
-                            <li><a class="dropdown-item" href="#">NSEI</a></li>
-                            <li><a class="dropdown-item" href="#">ALGUMACOISA</a></li>
-                            <li><a class="dropdown-item" href="#">LALA</a></li>
-                            <li><a class="dropdown-item" href="#">LALA</a></li>
-                            <li><a class="dropdown-item" href="#">LALA</a></li>
+                            <li><a class="dropdown-item" href="meusDados.html"><small>Meus dados</small></a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../index.html"><small>Sair</small></a></li>
                         </ul>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
-        </nav>
+        </nav> <br>
         <div id="header"></div>
         <div class="container">
             <div class="row">
@@ -113,7 +121,7 @@
                         </ol>
                     </nav>
                     <div class="mb-3">
-                        <input type="text" class="form-control" onkeyup="filtro(this)" placeholder="Filtrar por categoria">
+                        <input type="text" class="form-control" onkeyup="filtro(this)" placeholder="Filtrar por título">
                         <table class="table table-hover">
                             <tbody id="tfiltro"></tbody>
                         </table>
@@ -128,10 +136,10 @@
                             <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body">
                                     <table class="table table-hover">
-                                        <tr> <td> <a href="livro.html">  LIVRO 1 </a></td></tr>
-                                        <tr> <td> <a href="livro2.html">  LIVRO 2 </a></td></tr>
-                                        <tr> <td> <a href="livro.html">  LIVRO 3 </a></td></tr>
-                                        <tr> <td> <a href="livro.html">  LIVRO 4 </a></td></tr>
+                                        <tr> <td> <a href="livro.html">  OVER THE GARDEN WALL </a></td></tr>
+                                        <tr> <td> <a href="livro2.html"> O MUNDO DE SOFIA</a></td></tr>
+                                        <tr> <td> <a href="livro.html">  SENHOR DOS ANÉIS </a></td></tr>
+                                        <tr> <td> <a href="livro.html">  A MENINA QUE ROUBAVA LIVROS </a></td></tr>
                                         <tr> <td> <a href="livro.html">  LIVRO 5 </a></td></tr>
                                         <tr> <td> <a href="livro.html">  LIVRO 6 </a></td></tr>
                                         <tr> <td> <a href="livro.html">  LIVRO 7 </a></td></tr>
