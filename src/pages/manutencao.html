@@ -11,6 +11,25 @@
         <script src="../js/functions.js"></script>
     </head>
     <body>
+        <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"><strong>ONLIB</strong></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            ON
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <br>
+        <br>
         <div id="header"></div>
         <div class="container">
             <div class="row">
@@ -35,6 +54,43 @@
                 </div>
             </div>                
         </div>
+
+    <nav class="bg-white" style="padding: 10px; margin-top: 30px;">
+    <div class="container text-center">
+        <small> ONLIB | Biblioteca Online - (55) 9797 9797 | Copyright © 2022 - 2022</small> <br>
+        <small>
+            <a href="manutencao.html"><span class="bi bi-book"></span> Ajuda e Documentação</a> | 
+            <a href="#" data-bs-toggle="modal" data-bs-target="#modalError"> <span class="bi bi-bug"></span> Reportar Erro</a></small> 
+    </div>
+</nav>
+<!-- Modal erros  -->
+<div class="modal fade" id="modalError" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" data-bs-toggle="tooltip" data-bs-placement="right">
+                    <span class="bi-bug"></span> Reportar Erro
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="chat">
+                <form action="" method="post">
+                    <div class="mb-3" id="formErroPag">
+                        <label for="email" class="form-label">URL</label>
+                        <input type="url" class="form-control" id="email" placeholder="Insira a url para o erro encontrado" required>
+                    </div>
+                    <div class="mb-3" id="formErroPag">
+                        <label for="email" class="form-label">Descrição</label>
+                        <textarea class="form-control" placeholder="Insira uma breve descrição do problema encontrado"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline-success" data-bs-dismiss="modal" onclick="toast('Relatório Enviado. Agradecemos sua contribuição! :D')">Reportar</button>
+            </div>
+        </div>
+    </div>
+</div>
         <div id="footer"></div>
     </body>
     <script>
