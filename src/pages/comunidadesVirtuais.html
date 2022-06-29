@@ -3,6 +3,7 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8">
+        <link rel="icon" type="image/png" href="../images/b.png" sizes="16x16">
         <title>ONLIB - Adoradores de livros x</title>
         <link rel="stylesheet" href="../css/bootstrap.css">
         <link rel="stylesheet" href="../bootstrap-icons/font/bootstrap-icons.css">    
@@ -125,7 +126,7 @@
                 <div class="col-lg-3 col-sm-12">
                     <div class="list-group" id="list-tab" role="tablist">
                         <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="aulas"> <span class="bi bi-book"></span> Principal</a>
-                        <a class="list-group-item list-group-item-action" href="#" onclick="toast('Poxa, não há notícias cadastradas :/')"> <span class="bi bi-journals"></span> Notícias </a>
+                        <a class="list-group-item list-group-item-action" href="#" onclick="toast('Não há notícias cadastradas :/')"> <span class="bi bi-journals"></span> Notícias </a>
                         <a class="list-group-item list-group-item-action" id="list-participantes-list" data-bs-toggle="list" href="#list-participantes" role="tab" aria-controls="aulas"> <span class="bi bi-people"></span> Participantes</a>
                     </div>
                 </div>
@@ -144,11 +145,9 @@
                                 <div class="card-body" style="text-align: justify">
                                     Descrição <br>
                                     <small id="descricao">
-                                        Se você é novo aqui seja Bem-Vind@
-                                        <p>A comunidade é uma plataforma para compartilhar e recomendar livros sobre ficção cintífica a todos os seus participantes.
-                                        Text is outstandingly used for transferring messages, delivering information, 
-                                        expressing emotions, etc. Text is content used worldwide by the human species. 
-                                        The text holds the beauty of demonstrating symbol work, literature work.</p>
+                                        <br> <h6> Se você é novo aqui seja Bem-Vind@ </h6>
+                                        <p> A comunidade é uma plataforma para compartilhar e recomendar livros sobre ficção cintífica a todos os seus participantes.
+                                            Um lugar onde todos os membros da comunidade podem trabalhar juntos para melhorar o catálogo de livros do ONLIB.</p>
                                     </small>
                                     <small><a href="#list-home-list" id="descricao-ver-mais">[Ver mais]</a></small>
                                 </div>
@@ -204,10 +203,10 @@
         btnDescricao.addEventListener("click", (e) => {
             if(btnDescricao.text == "[Ver mais]"){
                 btnDescricao.text = "[Ver menos]";
-                document.getElementById('descricao').innerHTML = "Se você é novo aqui seja Bem-Vind@ A comunidade é uma plataforma para compartilhar e recomendar livros sobre ficção cintífica a todos os seus participantes. Text is outstandingly used for transferring messages, delivering information, expressing emotions, etc. Text is content used worldwide by the human species. The text holds the beauty of demonstrating symbol work, literature work. The"
+                document.getElementById('descricao').innerHTML = "<br> <h6> Se você é novo aqui seja Bem-Vind@ </h6> A comunidade é uma plataforma para compartilhar e recomendar livros sobre ficção cintífica a todos os seus participantes. Text is outstandingly used for transferring messages, delivering information, expressing emotions, etc. Text is content used worldwide by the human species. The text holds the beauty of demonstrating symbol work, literature work. The"
             }else{
                 btnDescricao.text = "[Ver mais]";
-                document.getElementById('descricao').innerHTML = "Se você é novo aqui seja Bem-Vind@ A comunidade é uma plataforma para compartilhar e recomendar livros sobre ficção cintífica a todos os seus participantes. "
+                document.getElementById('descricao').innerHTML = "<br> <h6> Se você é novo aqui seja Bem-Vind@ </h6> A comunidade é uma plataforma para compartilhar e recomendar livros sobre ficção cintífica a todos os seus participantes. "
             }
             
         });

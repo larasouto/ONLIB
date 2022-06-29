@@ -58,7 +58,7 @@ function filtro(input){
             }
         });
         if(isVoid){
-            tfiltro.innerHTML += "<tr> <td class='text-secondary'> Nenhuma categoria foi encontrada :/</td></tr>";
+            tfiltro.innerHTML += "<tr> <td class='text-secondary'> Nenhum título foi encontrado :/</td></tr>";
         }
     }
     
