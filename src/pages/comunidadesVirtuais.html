@@ -84,47 +84,24 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" style="height: 10000px;" id="chat">
-                    <div class="col-12 alert-light">
-                        <small><strong>Você</strong> </small> <br>
-                        <small>Oi Juju!</small>
-                    </div>
-                    <div class="col-12 alert-light">
-                        <small><strong>Você</strong> </small> <br>
-                        <small>How was the concert?</small> <br>
-                        <small>You went with your friends?</small>
-                    </div>
-                    <div class="col-12 alert-light">
-                        <small><strong>Juju</strong> </small> <br>
-                        <small>It was awesome , yes i did!!</small>
-                    </div>
-                    <div class="col-12 alert-light">
-                        <small><strong>Você</strong> </small> <br>
-                        <small>How nice! Glad you enjoyed.</small>
-                    </div>
-                    <div class="col-12 alert-light">
-                        <small><strong>Juju</strong> </small> <br>
-                        <small>Thank you, bye!</small>
-                    </div>
-                    <div class="col-12">
-                        <small><strong>Você</strong> </small> <br>
-                        <small>Bye!</small>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <div class="container">
-                        <form id="chatEnviaMsg" onsubmit="event.preventDefault(); enviarMsg();">
-                            <div class="row">
-                                <div class="col-9">
-                                    <input class="form-control" placeholder="Aa" id="message" autocomplete="off">
-                                </div>
-                                <div class="col-3">
-                                    <button type="submit" class="btn btn-outline-primary">
-                                        <span class="bi-reply"></span>
-                                        Enviar
-                                    </button>
+                    <div class="modal-footer">
+                        <div class="container">
+                            <div class="card-body msg_card_body" id="bodyContent">
+                            </div>
+                            <div class="card-footer">
+                                <div class="input-group">
+
+                                    <textarea name="message" id="message" class="form-control type_msg"
+                                        placeholder="Escreva sua mensagem..."></textarea>
+                                    <div class="input-group-append">
+                                        <button id="submit" type="" class="input-group-text send_btn"><i
+                                                name="send"></i> <span class="bi-reply"></span>
+                                        </button>
+                                    </div>
+
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -247,3 +224,88 @@
 </script>
 
 </html>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js";
+    import {
+        getDatabase,
+        set,
+        ref,
+        push,
+        child,
+        onValue,
+        onChildAdded
+    } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-database.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyB_gcZwYMMlqCFo9h5-yQOtaANmryETCZA",
+        authDomain: "chat-3987c.firebaseapp.com",
+        databaseURL: "https://chat-3987c-default-rtdb.firebaseio.com",
+        projectId: "chat-3987c",
+        storageBucket: "chat-3987c.appspot.com",
+        messagingSenderId: "508745708430",
+        appId: "1:508745708430:web:a5cb2ba9b3097dbff22adf",
+        measurementId: "G-Q2JFEQ0E3B"    
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+
+    var myName = prompt("Como você quer ser chamado?");
+
+    submit.addEventListener('click', (e) => {
+        var message = document.getElementById('message').value;
+        var name = myName;
+        const id = push(child(ref(database), 'messages')).key;
+
+        set(ref(database, 'messages/' + id), {
+            name: name,
+            message: message
+        });
+        document.getElementById('message').value = "";
+        alert('message has sent');
+
+    });
+
+    const newMsg = ref(database, 'messages/');
+    onChildAdded(newMsg, (data) => {
+        if (data.val().name != myName) {
+            var divData = '<div class="d-flex justify-content-start mb-4" id="fromDiv">\n' +
+                '                        <div class="img_cont_msg">\n' +
+                '                            <img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQxp-HnIDy2TEZnGa181pQcDLb7tyPrd0D8w&usqp=CAU"\n' +
+                '                                 width="32" height="32" class="rounded-circle user_img_msg">\n' +
+                '                        </div>\n' +
+                '                        <div class="msg_cotainer" >\n' +
+                '                        <div class=<small><strong>Membro</strong> </small> <br> <small></div>\n' +
+                '                            ' + data.val().message + '' +
+                '                            <span class="msg_time"></span>\n' +
+                '                        </div>\n' +
+                '                    </div>';
+            var d1 = document.getElementById('bodyContent');
+            d1.insertAdjacentHTML('beforebegin', divData);
+        } else {
+            var divData = '<div class="d-flex justify-content-end mb-4">\n' +
+                '                        <div class="msg_cotainer_send" id="sendDiv">\n' +
+                '                        <div class=<small><strong>Você </strong> </small> <br> <small></div>\n' +
+                '                            ' + data.val().message + '' +
+                '                                         </div>\n' +
+                '                        <div class="img_cont_msg">\n' +
+                '                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlMwkUd306XB0p0KvvjWj9eMTndkDyYFkM5Q&usqp=CAU"\n' +
+                '                                width="32" height="32"style="width 15%"\n' +
+                '                                 class="rounded-circle user_img_msg">\n' +
+                '                        </div>\n' +
+                '                    </div>';
+            var d1 = document.getElementById('bodyContent');
+            d1.insertAdjacentHTML('beforebegin', divData);
+        }
+    });
+
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('#action_menu_btn').click(function () {
+            $('.action_menu').toggle();
+        });
+    });
+</script>
