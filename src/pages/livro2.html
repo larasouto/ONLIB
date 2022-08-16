@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="../images/icon.png" sizes="16x16">
+    <title>ONLIB - Livro X</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../bootstrap-icons/font/bootstrap-icons.css">
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/functions.js"></script>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-12"> </div>
+            <div class="col-lg-9 col-sm-12">
+                <h3><br>O Senhor dos Anéis</h3>
+            </div>
+            <div class="col-lg-3 col-sm-12">
+                <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list"
+                        href="#list-home" role="tab" aria-controls="aulas"> <span class="bi bi-book"></span> Livro</a>
+                    <a class="list-group-item list-group-item-action" href="#"
+                        onclick="toast('O arquivo será baixado em breve!')"> <span class="bi bi-file-arrow-down"></span>
+                        Descrição </a>
+                    <a class="list-group-item list-group-item-action" id="list-freq-list" data-bs-toggle="list"
+                        href="#list-freq" role="tab" aria-controls="Frequência"> <span class="bi bi-graph-up"></span>
+                        Dias de leitura</a>
+                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list"
+                        href="#list-messages" role="tab" aria-controls="Notas"> <span class="bi bi-grid-3x2"></span>
+                        Nota do livro</a>
+                </div>
+            </div>
+            <div class="col-lg-9 col-sm-12">
+                <hr>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="home.html">Página Inicial</a></li>
+                        <li class="breadcrumb-item"><a href="home.html">Meus Livros</a></li>
+                        <li class="breadcrumb-item" aria-current="page">O senhor dos anéis</li>
+                    </ol>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="list-home" role="tabpanel"
+                        aria-labelledby="list-home-list">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <ul>
+                                    <img src="../images/livro1.png" class="rounded" alt="..." style="width: 25%;">
+                                    <br>
+                                    ⠀
+                                    <li>Autor: J.R.R. Tolkien </li>
+                                    <li>Editora: HarperCollins </li>
+                                    <li> Número de páginas: 576 </li>
+                                    <li> Data de publicação: 25/09/2019</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h6>Sobre</h6>
+                                <p> A Sociedade do Anel começa no Condado, a região rural do oeste da Terra-média onde
+                                    vivem os diminutos e pacatos hobbits.
+                                    Bilbo Bolseiro, um dos raros aventureiros desse povo, cujas peripécias foram
+                                    contadas em O Hobbit,
+                                    resolve ir embora do Condado e deixa sua considerável herança nas mãos de seu jovem
+                                    parente Frodo.
+                                    O mais importante legado de Bilbo é o anel mágico que costumava usar para se tornar
+                                    invisível.
+                                    No entanto, o mago Gandalf, companheiro de aventuras do velho hobbit, revela a Frodo
+                                    que o objeto é o Um Anel,
+                                    a raiz do poder demoníaco de Sauron, o Senhor Sombrio, que deseja escravizar todos
+                                    os povos da Terra-média. A única maneira de eliminar a ameaça de Sauron é destruir o
+                                    Um Anel nas entranhas da própria montanha de fogo onde foi forjado.
+                                    A revelação faz com que Frodo e seus companheiros hobbits Sam, Merry e Pippin deixem
+                                    a segurança do Condado e iniciem uma perigosa jornada rumo ao leste. Ao lado de
+                                    representantes dos outros Povos Livres que resistem ao Senhor Sombrio, eles formam a
+                                    Sociedade do Anel.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5></h5>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+
+                        <div class="card">
+
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="list-freq" role="tabpanel" aria-labelledby="list-messages-list">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Situação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>02/06/2022</td>
+                                    <td class="text-success"> <span class="bi bi-check2"></span> Leitura</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Sua avaliação </th>
+                                    <th> Nota </th>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td>Enredo</td>
+                                <td> 5.0 / <strong> 5.0 </strong></td>
+                            </tr>
+                            <tr>
+                                <td>Criatividade</td>
+                                <td> 4.5 / <strong> 5.0 </strong></td>
+                            </tr>
+                            <tr>
+                                <td>Personagens</td>
+                                <td> 4.2 / <strong> 5.0 </strong></td>
+                            </tr>
+                            <tr>
+                                <td>Execução</td>
+                                <td> 5.0 / <strong> 5.0 </strong></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+<script>
+    include("../includes/footer.html", "footer");
+    include("../includes/header.html", "header");
+</script>
+
+</html>

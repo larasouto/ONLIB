@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="images/icon.png" sizes="16x16">
+    <title>ONLIB - Login</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.css">
+    <script src="js/bootstrap.js"></script>
+    <script src="js/functions.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <form>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"><strong>ONLIB</strong></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav> <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-8">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Entrar
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <h2 class="text-center">Entrar</h2>
+                                    <form action="../pages/home.html" id="form">
+                                        <div class="mb-3" id="mbemail">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="text" class="form-control" id="email"
+                                                placeholder="Insira seu email" required>
+                                            <div class="invalid-feedback"> Email incorreto :c </div>
+                                            <div class="valid-feedback"> Email correto :p </div>
+                                        </div>
+                                        <div class="mb-3" id="mbsenha">
+                                            <label for="lpassword" class="form-label">Senha</label>
+                                            <input type="password" class="form-control" id="psw"
+                                                placeholder="Insira sua senha" required>
+                                            <div class="invalid-feedback"> Senha incorreta :c </div>
+                                            <a href="">
+                                                <small> Esqueci minha senha </small>
+                                            </a>
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="button" id="submitData" name="submitData"
+                                                class="btn btn-primary" class="registerbtn"> Entrar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" class="btn btn-primary" aria-expanded="false"
+                                    aria-controls="collapseTwo">
+                                    Não possui cadastro? Clique aqui!
+                                </button>
+                            </h2>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div id="footer"></div>
+</body>
+<script>
+    include("../includes/footer.html", "footer");
+</script>
+
+</html>
+
+<script type="module">
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js";
+    import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        signOut
+    } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-auth.js";
+    import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-database.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyB_gcZwYMMlqCFo9h5-yQOtaANmryETCZA",
+        authDomain: "chat-3987c.firebaseapp.com",
+        databaseURL: "https://chat-3987c-default-rtdb.firebaseio.com",
+        projectId: "chat-3987c",
+        storageBucket: "chat-3987c.appspot.com",
+        messagingSenderId: "508745708430",
+        appId: "1:508745708430:web:a5cb2ba9b3097dbff22adf",
+        measurementId: "G-Q2JFEQ0E3B"
+
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+    const database = getDatabase(app);
+
+    submitData.addEventListener('click', (e) => {
+
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('psw').value;
+
+
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+
+                const user = userCredential.user;
+
+                set(ref(database, 'users/' + user.uid), {
+                    email: email,
+                    password: password
+                })
+                    .then(() => {
+
+                        alert('user created successfully');
+
+                    })
+                    .catch((error) => {
+
+                        alert(error);
+                    });
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+
+                alert(errorMessage);
+            });
+
+        // log in user
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+
+                const user = userCredential.user;
+
+                var lgDate = new Date();
+                update(ref(database, 'users/' + user.uid), {
+                    last_login: lgDate,
+                })
+                    .then(() => {
+
+                        location.href = '../pages/home.html';
+
+                    })
+                    .catch((error) => {
+
+                        alert(error);
+                    });
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert(errorMessage);
+            });
+
+        signOut(auth).then(() => {
+
+        }).catch((error) => {
+
+        });
+    });
+
+</script>

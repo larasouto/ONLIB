@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="../images/icon.png" sizes="16x16">
+    <title>ONLIB</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../bootstrap-icons/font/bootstrap-icons.css">
+    <script src="../js/functions.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../includes/footer.html"></script>
+    <script src="../includes/header.html"></script>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-12">
+                <div class="card">
+                    <img src="../images/mid2.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Nome do leitor</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <a href="meusDados.html" class="text-dark">
+                            <li class="list-group-item"> <span class="bi bi-person"></span>Meus dados</li>
+                        </a>
+                        <a href="meusLivros.html" class="text-dark">
+                            <li class="list-group-item"> <span class="bi bi-book"></span>Meus livros</li>
+                        </a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#modalComunidades" class="text-dark">
+                            <li class="list-group-item"> <span class="bi bi-people"></span>Minhas Comunidades</li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <!-- COMUNIDADES VIRTUAIS  -->
+            <div class="modal fade" id="modalComunidades" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" data-bs-toggle="tooltip" data-bs-placement="right">
+                                <span class="bi-people"></span> Minhas Comunidades
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body" id="chat">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Ano</th>
+                                        <th>Nome</th>
+                                        <th>Reponsável</th>
+                                    </tr>
+                                </thead>
+                                <tr style="cursor: pointer;">
+                                    <td>2022</td>
+                                    <td>Comunidade de adoradores de livros Ficção Científica</td>
+                                    <td>nomeDefault</td>
+                                </tr>
+                                <a href="">
+
+                                    <tr style="cursor: pointer;">
+                                        <td>2022</td>
+                                        <td>Comunidade de adoradores de livros y</td>
+                                        <td>nomeDefault</td>
+                                    </tr>
+                                </a>
+                            </table>
+                            <script>
+                                document.querySelectorAll("tr").forEach((e) => {
+                                    e.addEventListener("click", (click) => {
+                                        location.href = "comunidadesVirtuais.html";
+                                    });
+                                });
+                            </script>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 col-sm-12">
+                <h3><br>Minha biblioteca</h3>
+                <hr>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="home.html">Página Inicial</a></li>
+                        <li class="breadcrumb-item" aria-current="page">Minha biblioteca</li>
+                    </ol>
+                </nav>
+                <div class="mb-3">
+                    <input type="text" class="form-control" onkeyup="filtro(this)" placeholder="Filtrar por título">
+                    <table class="table table-hover">
+                        <tbody id="tfiltro"></tbody>
+                    </table>
+                </div>
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                aria-controls="flush-collapseOne">
+                                COLEÇÃO 1
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <table class="table table-hover">
+                                    <tr>
+                                        <td> <a href="livro.html"> OVER THE GARDEN WALL </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td> <a href="livro.html"> GRAVITY FALLS </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td> <a href="livro2.html"> O SENHOR DOS ANÉIS </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td> <a href="livro.html"> SHERLOCK HOLMES </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td> <a href="livro.html"> LIVRO 5 </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td> <a href="livro.html"> LIVRO 6 </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td> <a href="livro.html"> LIVRO 7 </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td> <a href="livro.html"> LIVRO 8 </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td> <a href="livro.html"> LIVRO 9 </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td> <a href="livro.html"> LIVRO 10 </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td> <a href="livro.html"> LIVRO 11 </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td> <a href="livro.html"> LIVRO 12 </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td> <a href="livro.html"> LIVRO 13 </a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                aria-controls="flush-collapseTwo">
+                                COLEÇÃO 2
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                ...
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                aria-controls="flush-collapseThree">
+                                COLEÇÃO 3
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                ...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+<script>
+    include("../includes/footer.html", "footer");
+    include("../includes/header.html", "header");
+</script>
+
+</html>

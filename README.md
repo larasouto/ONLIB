@@ -1,2 +1,5 @@
-# ONLIB
-Repositório para aplicação ONLIB desenvolvida na disciplina de Programação Web
+### ONLIB
+
+ONLIB é uma aplicação dinâmica de uma Biblioteca Online desenvolvidada para disciplina de Programação Web.
+
+

@@ -1,0 +1,40 @@
+<nav class="bg-white" style="padding: 10px; margin-top: 30px;">
+    <div class="container text-center">
+        <small> ONLIB | Biblioteca Online - (55) 9797 9797 | Copyright © 2022 - 2022</small> <br>
+        <small>
+            <a href="manutencao.html"><span class="bi bi-book"></span> Ajuda e Documentação</a> |
+            <a href="#" data-bs-toggle="modal" data-bs-target="#modalError"> <span class="bi bi-bug"></span> Reportar
+                Erro</a></small>
+    </div>
+</nav>
+<!-- Modal erros  -->
+<div class="modal fade" id="modalError" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" data-bs-toggle="tooltip" data-bs-placement="right">
+                    <span class="bi-bug"></span> Reportar Erro
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="chat">
+                <form action="" method="post">
+                    <div class="mb-3" id="formErroPag">
+                        <label for="email" class="form-label">URL</label>
+                        <input type="url" class="form-control" id="email"
+                            placeholder="Insira a url para o erro encontrado" required>
+                    </div>
+                    <div class="mb-3" id="formErroPag">
+                        <label for="email" class="form-label">Descrição</label>
+                        <textarea class="form-control"
+                            placeholder="Insira uma breve descrição do problema encontrado"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline-success" data-bs-dismiss="modal"
+                    onclick="toast('Relatório Enviado. Agradecemos sua contribuição! :D')">Reportar</button>
+            </div>
+        </div>
+    </div>
+</div>
