@@ -33,7 +33,7 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li>
                             <a class="dropdown-item alert-primary" href="#" data-bs-toggle="modal"
-                                data-bs-target="#msgLorena">
+                                data-bs-target="#msgComunidade">
                                 <small><strong>Chat da Comunidade</strong> </small> <br>
                                 <small>Bye!</small>
                             </a>
@@ -72,7 +72,7 @@
         </div>
     </div>
     <!-- Modal chat -->
-    <div class="modal fade" id="msgLorena" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="msgComunidade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
@@ -245,7 +245,7 @@
         storageBucket: "chat-3987c.appspot.com",
         messagingSenderId: "508745708430",
         appId: "1:508745708430:web:a5cb2ba9b3097dbff22adf",
-        measurementId: "G-Q2JFEQ0E3B"    
+        measurementId: "G-Q2JFEQ0E3B"
     };
 
     const app = initializeApp(firebaseConfig);
@@ -276,7 +276,6 @@
                 '                                 width="32" height="32" class="rounded-circle user_img_msg">\n' +
                 '                        </div>\n' +
                 '                        <div class="msg_cotainer" >\n' +
-                '                        <div class=<small><strong>Membro</strong> </small> <br> <small></div>\n' +
                 '                            ' + data.val().message + '' +
                 '                            <span class="msg_time"></span>\n' +
                 '                        </div>\n' +
@@ -286,7 +285,6 @@
         } else {
             var divData = '<div class="d-flex justify-content-end mb-4">\n' +
                 '                        <div class="msg_cotainer_send" id="sendDiv">\n' +
-                '                        <div class=<small><strong>Você </strong> </small> <br> <small></div>\n' +
                 '                            ' + data.val().message + '' +
                 '                                         </div>\n' +
                 '                        <div class="img_cont_msg">\n' +
