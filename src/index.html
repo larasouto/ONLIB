@@ -57,20 +57,17 @@
                                             <label for="email" class="form-label">Email</label>
                                             <input type="text" class="form-control" id="email"
                                                 placeholder="Insira seu email" required>
-                                            <div class="invalid-feedback"> Email incorreto :c </div>
-                                            <div class="valid-feedback"> Email correto :p </div>
                                         </div>
                                         <div class="mb-3" id="mbsenha">
                                             <label for="lpassword" class="form-label">Senha</label>
                                             <input type="password" class="form-control" id="psw"
                                                 placeholder="Insira sua senha" required>
-                                            <div class="invalid-feedback"> Senha incorreta :c </div>
                                             <a href="">
                                                 <small> Esqueci minha senha </small>
                                             </a>
                                         </div>
                                         <div class="col-12">
-                                            <button type="button" id="submitData" name="submitData"
+                                            <button type="button" id="submitLogin" name="submitLogin"
                                                 class="btn btn-primary" class="registerbtn"> Entrar</button>
                                         </div>
                                     </form>
@@ -85,18 +82,44 @@
                                     Não possui cadastro? Clique aqui!
                                 </button>
                             </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <form action="../pages/home.html" id="form">
+                                        <div class="mb-3" id="mbemail">
+                                            <label for="email1" class="form-label">Email</label>
+                                            <input type="text" class="form-control" id="email1"
+                                                placeholder="Insira seu email" required>
+                                        </div>
+                                        <div class="mb-3" id="mbsenha">
+                                            <label for="psw1" class="form-label">Senha</label>
+                                            <input type="password" class="form-control" id="psw1"
+                                                placeholder="Insira sua senha" required>
+                                        </div>
+                                        <div class="mb-3" id="mbname">
+                                            <label for="name1" class="form-label">Nome de Usuário</label>
+                                            <input type="text" class="form-control" id="name1"
+                                                placeholder="Insira seu nome" required>
+                                        </div>
+                                        <br>
+                                        <div class="col-12">
+                                            <button type="button" id="submitData" name="submitData"
+                                                class="btn btn-primary" class="registerbtn"> Entrar</button>
+                                        </div>
+                                </div>
+                                </h2>
 
 
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
         <div id="footer"></div>
 </body>
 <script>
-    include("../includes/footer.html", "footer");
+    include("includes/footer.html", "footer");
 </script>
 
 </html>
@@ -130,18 +153,20 @@
 
     submitData.addEventListener('click', (e) => {
 
-        var email = document.getElementById('email').value;
-        var password = document.getElementById('psw').value;
+        var email = document.getElementById('email1').value;
+        var password = document.getElementById('psw1').value;
+        var name = document.getElementById('name1').value;
 
 
-        createUserWithEmailAndPassword(auth, email, password)
+        createUserWithEmailAndPassword(auth, email, password, name)
             .then((userCredential) => {
 
                 const user = userCredential.user;
 
                 set(ref(database, 'users/' + user.uid), {
-                    email: email,
-                    password: password
+                    email1: email1,
+                    name1: name1,
+                    password1: psw1
                 })
                     .then(() => {
 
@@ -159,6 +184,12 @@
 
                 alert(errorMessage);
             });
+    });
+
+    submitLogin.addEventListener('click', (e) => {
+
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('psw').value;
 
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
