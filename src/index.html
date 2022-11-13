@@ -122,6 +122,8 @@
 
 </html>
 
+
+ 
 <script type="module">
 
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js";
@@ -140,12 +142,12 @@
         projectId: "chat-3987c",
         storageBucket: "chat-3987c.appspot.com",
         messagingSenderId: "508745708430",
-        appId: "1:508745708430:web:a5cb2ba9b3097dbff22adf",
-        measurementId: "G-Q2JFEQ0E3B"
+        appId: "1:508745708430:web:00e617fd48e16c69f22adf",
+        measurementId: "G-BQDTDMT6XT"
 
     };
-
     const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
     const auth = getAuth();
     const database = getDatabase(app);
 
